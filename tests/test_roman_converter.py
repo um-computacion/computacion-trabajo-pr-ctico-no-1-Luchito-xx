@@ -25,5 +25,11 @@ class TestRomanConverter(unittest.TestCase):
         self.assertEqual(decimal_to_roman(666), 'DCLXVI')
         self.assertEqual(decimal_to_roman(333), 'CCCXXXIII')
 
+    def test_limites(self):
+        with self.assertRaises(ValueError):
+            decimal_to_roman(0)
+        with self.assertRaises(ValueError):
+            decimal_to_roman(4000)
+
 if __name__ == '__main__':
     unittest.main()
